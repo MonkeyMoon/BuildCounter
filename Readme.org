@@ -1,0 +1,19 @@
+* BuildCounter
+
+Simple script that takes and updates major.minor.patch + commit_hash content of a Unity asset.
+
+** Create the BuildVersion.asset file
+- A default file is shared in =UnityFiles/BuildVersion.asset= as an example.
+- Add =UnityFiles/BuildVersionData.cs= in a folder named =Editor= in Unity.
+- Create a =BuildVersion.asset= file in Unity using a right click in the project view.
+** Update the build number and commit hash
+- Run the script =path/to/script/build-counter.py path/to/unity/asset/BuildVersion.asset major|minor|patch commit_hash=.
+*** Major.Minor.Patch arguments
+| Argument | Action                                                                       |
+|----------+------------------------------------------------------------------------------|
+| =major=  | Adds 1 to the major number contained in the file. Sets minor and patch to 0. |
+| =minor=  | Adds 1 to the minor number contained in the file. Sets patch to 0.           |
+| =patch=  | Adds 1 to the patch number contained in the file.                            |
+
+*** Commit Hash argument
+- The expected argument must be a string of 7 to 40 alpha numeric characters.
